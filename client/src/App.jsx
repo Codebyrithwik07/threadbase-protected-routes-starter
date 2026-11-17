@@ -30,9 +30,9 @@ export default function App() {
         <Route path="/threads" element={<ThreadsPage />} />
 
         {/* TODO (task 2): protect these three with <PrivateRoute> */}
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/threads/new" element={<NewThreadPage />} />
+        <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
+        <Route path="/profile" element={<privateRoute><ProfilePage /></privateRoute>} />
+        <Route path="/threads/new" element={<privateRoute><NewThreadPage /></privateRoute>} />
       </Routes>
     </div>
   );
